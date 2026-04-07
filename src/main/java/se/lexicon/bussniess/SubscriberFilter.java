@@ -1,8 +1,6 @@
-package se.lexicon.service;
+package se.lexicon.bussniess;
 
 import se.lexicon.functional.Subscriber;
-
-import java.util.concurrent.Flow;
 
 @FunctionalInterface
 

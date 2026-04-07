@@ -1,38 +1,28 @@
 package se.lexicon.service;
 
-
-
-import se.lexicon.SubscriberAction;
 import se.lexicon.functional.Subscriber;
+import se.lexicon.bussniess.SubscriberFilter;
+import se.lexicon.bussniess.SubscriberAction;
 
 import java.util.List;
-import java.util.concurrent.Flow;
 import java.util.stream.Collectors;
 
 public class SubscriberProcessor {
 
-
-        public List<Flow.Subscriber> findSubscribers(List<Flow.Subscriber> list, SubscriberFilter filter) {
-            return list.stream()
-                    .filter(filter::matches)
-                    .collect(Collectors.toList());
-        }
-
-        public List<Subscriber> applyToMatching(List<Subscriber> list,
-                                                SubscriberFilter filter,
-                                                SubscriberAction action) {
-
-            list.stream()
-                    .filter(filter::matches)
-                    .forEach(subscriber -> action.run((Flow.Subscriber) subscriber));
-
-            return list;
-        }
+    public List<Subscriber> findSubscribers(List<Subscriber> list, SubscriberFilter filter) {
+        return list.stream()
+                .filter(filter::matches)
+                .collect(Collectors.toList());
     }
 
+    public List<Subscriber> applyToMatching(List<Subscriber> list,
+                                            SubscriberFilter filter,
+                                            SubscriberAction action) {
 
+        list.stream()
+                .filter(filter::matches)
+                .forEach(action::run);
 
-
-
-
-
+        return list;
+    }
+}

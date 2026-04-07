@@ -8,9 +8,9 @@ import se.lexicon.functional.Subscriber;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.Flow;
+import java.util.Optional;
 
-public class SubscriberDAOImpl implements SubscriberDAO {
+public class SubscriberDAOImpl extends SubscriberDAO {
 
         private final Connection connection;
 
@@ -33,7 +33,7 @@ public class SubscriberDAOImpl implements SubscriberDAO {
 
         @Override
         public List<Subscriber> findAll() {
-            List<Flow.Subscriber> list = new ArrayList<>();
+            List<Subscriber> list = new ArrayList<>();
             String sql = "SELECT * FROM subscribers";
 
             try (Statement stmt = connection.createStatement();
@@ -55,7 +55,7 @@ public class SubscriberDAOImpl implements SubscriberDAO {
         }
 
     @Override
-    public Subscriber findById(int id) {
+    public Optional<Subscriber> findById(int id) {
         return null;
     }
 

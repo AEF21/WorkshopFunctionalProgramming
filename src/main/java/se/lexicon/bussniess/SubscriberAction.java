@@ -1,4 +1,4 @@
-package se.lexicon;
+package se.lexicon.bussniess;
 
 
 import java.util.concurrent.Flow;

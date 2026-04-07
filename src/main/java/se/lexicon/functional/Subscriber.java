@@ -2,7 +2,7 @@ package se.lexicon.functional;
 
 import java.util.concurrent.Flow;
 
-public class Subscriber implements Flow.Subscriber {
+public class Subscriber implements Flow.Subscriber  {
 
 
     private int id;
@@ -92,5 +92,9 @@ public class Subscriber implements Flow.Subscriber {
     @Override
     public void onComplete() {
 
+    }
+
+    public String getName() {
+        return "";
     }
 }
