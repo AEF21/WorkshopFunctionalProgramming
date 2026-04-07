@@ -6,5 +6,4 @@ public enum Plan {
     Basic,
     Medium;
 
-
 }
