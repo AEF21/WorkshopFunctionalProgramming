@@ -1,13 +1,15 @@
 package se.lexicon.service;
 
 
-/*class SubscriberProcessor {
-        +findSubscribers(list: List~Subscriber~, filter: SubscriberFilter): List~Subscriber~
-            +applyToMatching(list: List~Subscriber~, filter: SubscriberFilter, action: SubscriberAction): List~Subscriber~
-}/*
 
 
 public class SubscriberProcessor {
+
+    //public findSubscriber(List: List<Subscriber>): List<Subscriber>
+  //  Public applyToMatch(List: List<Subscriber> filter: SubscriberFilter)
+   // action: SubscriberAction): List~Subscriber~
+
+
 
 
 
