@@ -1,6 +1,8 @@
 package se.lexicon.functional;
 
-public class Subscriber {
+import java.util.concurrent.Flow;
+
+public class Subscriber implements Flow.Subscriber {
 
 
     private int id;
@@ -15,6 +17,9 @@ public class Subscriber {
         this.plan = plan;
         this.active = active;
         this.monthsRemaining = monthsRemaining;
+    }
+
+    public Subscriber(int id, String name, String email) {
     }
 
     public int getId() {
@@ -69,4 +74,23 @@ public class Subscriber {
     }
 
 
+    @Override
+    public void onSubscribe(Flow.Subscription subscription) {
+        
+    }
+
+    @Override
+    public void onNext(Object item) {
+
+    }
+
+    @Override
+    public void onError(Throwable throwable) {
+
+    }
+
+    @Override
+    public void onComplete() {
+
+    }
 }

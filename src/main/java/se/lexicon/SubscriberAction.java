@@ -1,6 +1,11 @@
 package se.lexicon;
+
+
+import java.util.concurrent.Flow;
+
 @FunctionalInterface
 public interface SubscriberAction {
-    static void run(subscriber:Subscriber);
 
+
+    void run(Flow.Subscriber subscriber);
 }

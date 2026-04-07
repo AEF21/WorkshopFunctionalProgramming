@@ -15,5 +15,22 @@ public interface SubscriberDAO {
 
 
 
-}
+
+    private final List<Subscriber> storage = new ArrayList<>();
+
+        public void save(Subscriber subscriber) {
+            storage.add(subscriber);
+        }
+
+        public List<Subscriber> findAll() {
+            return new ArrayList<>(storage);
+        }
+
+        public Optional<Subscriber> findById(int id) {
+            return storage.stream()
+                    .filter(s -> s.getId() == id)
+                    .findFirst();
+        }
+    }
+
 
